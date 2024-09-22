@@ -31,6 +31,7 @@ class PersonServiceTest {
                     .id(personId)
                     .name(dummyName)
                     .age(dummyAge)
+                    .hobby("농구")
                     .build();
 
             // when

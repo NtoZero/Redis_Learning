@@ -17,4 +17,5 @@ public class PersonVo {
     private String id;
     private String name;
     private int age;
+    private String hobby;
 }
