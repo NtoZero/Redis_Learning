@@ -1,20 +1,20 @@
 package learn.redis.service;
 
 import learn.redis.model.vo.PersonVo;
-import learn.redis.repository.PersonRepository;
+import learn.redis.repository.PersonRedisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
 public class PersonService {
-    private final PersonRepository personRepository;
+    private final PersonRedisRepository personRedisRepository;
 
     public void savePerson(PersonVo personVo) {
-        personRepository.save(personVo);
+        personRedisRepository.save(personVo);
     }
 
     public PersonVo getPerson(String id) {
-        return personRepository.findById(id).orElse(null);
+        return personRedisRepository.findById(id).orElse(null);
     }
 }
