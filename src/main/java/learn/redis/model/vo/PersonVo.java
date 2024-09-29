@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 @ToString
 @Getter
@@ -15,6 +16,8 @@ import org.springframework.data.redis.core.RedisHash;
 public class PersonVo {
     @Id
     private String id;
+    @Indexed
+    private String uuid;
     private String name;
     private int age;
     private String hobby;
