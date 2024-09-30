@@ -1,0 +1,11 @@
+spring:
+  data:
+    redis:
+      cluster:
+        nodes:
+          - localhost:7001 # redis-master-1
+          - localhost:7002 # redis-master-2
+          - localhost:7003 # redis-master-3
+          - localhost:7004 # redis-replica-1
+          - localhost:7005 # redis-replica-2
+          - localhost:7006 # redis-replica-3
