@@ -17,4 +17,8 @@ public class PersonService {
     public PersonVo getPerson(String id) {
         return personRedisRepository.findById(id).orElse(null);
     }
+
+    public PersonVo getPersonByUuid(String uuid) {
+        return personRedisRepository.findById(uuid).orElse(null);
+    }
 }
