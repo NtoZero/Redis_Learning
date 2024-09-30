@@ -55,3 +55,11 @@ BRSB-eIBRS Not affected; BHI Retpoline
 Srbds:                  Not affected
 Tsx async abort:        Not affected
 
+---
+## 결과 (30만 건 저장)
+
+StopWatch 'RedisRepository 30만 건 저장, Index 추가': 5049.3532209 seconds
+--------------------------------------------------------------------
+Seconds       %       Task name
+--------------------------------------------------------------------
+5049.353221   100%    Hash save Test

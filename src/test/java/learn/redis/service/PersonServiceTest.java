@@ -23,9 +23,9 @@ class PersonServiceTest {
     @DisplayName("Person 객체를 해시 타입으로 레디스에 저장할 수 있다.")
     @Test
     void hashTypeSave() {
-        StopWatch stopWatch = new StopWatch("RedisRepository 100만 건 저장, Index 추가");
+        StopWatch stopWatch = new StopWatch("RedisRepository 30만 건 저장, Index 추가");
         stopWatch.start("Hash save Test");
-        for(int i=0; i<1_000_000; i++) {
+        for(int i=0; i<300_000; i++) {
 
             // given
             String personId = String.valueOf(i);
