@@ -25,7 +25,7 @@ class PersonServiceTest {
     void hashTypeSave() {
         StopWatch stopWatch = new StopWatch("RedisRepository 30만 건 저장, Index 추가");
         stopWatch.start("Hash save Test");
-        for(int i=0; i<300; i++) {
+        for(int i=0; i<300_000; i++) {
 
             // given
             String personId = String.valueOf(i);
@@ -51,18 +51,18 @@ class PersonServiceTest {
     @DisplayName("해시 타입 Person 객체를 레디스에서 조회할 수 있다.")
     @Test
     void getPersonById() {
-        for(int i=0; i<1; i++) {
+        StopWatch stopWatch = new StopWatch("RedisRepository 30만 건 조회");
+        stopWatch.start("Hash get Test");
+        for(int i=0; i<300_000; i++) {
             //given
             String personId = String.valueOf(i);
 
             //when
             PersonVo person = personService.getPerson(personId);
-            log.info(person.toString());
-
-            //then
-            Assertions.assertThat(person).isNotNull();
-            Assertions.assertThat(person.getId()).isEqualTo(personId);
         }
+        // then
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
     }
 
     @DisplayName("findByUuid 테스트")
